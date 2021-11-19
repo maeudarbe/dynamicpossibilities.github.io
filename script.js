@@ -109,7 +109,7 @@ var displayText = 'Type anything, then press enter/return.';
 var displayText2 = 'Dynamic Possibilities';
 var displayText3 = 'Press 0 to stop';
 
-// let = superArray = [];
+
 
 // function setup() {
 //   let cnv = createCanvas(windowWidth, windowHeight);
