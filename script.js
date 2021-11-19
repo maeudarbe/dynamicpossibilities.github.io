@@ -107,7 +107,7 @@ window.addEventListener('keydown', (e) => {
 
 var displayText = 'Type anything, then press enter/return.';
 var displayText2 = 'Dynamic Possibilities';
-var displayText3 = 'Press 0 to stop';
+var displayText3 = 'by Mae Udarbe';
 
 
 
@@ -172,7 +172,7 @@ var displayText3 = 'Press 0 to stop';
 
 
 function setup () {
-  let cnv = createCanvas(windowWidth, windowHeight);
+  let cnv = createCanvas(1366, 784);
   noStroke();
   frameRate(25);
   fill(153, 51, 0);
@@ -184,7 +184,7 @@ function setup () {
   let outside = color(153, 51, 0);
 
   push();
-  translate(80, 150);
+  translate(50, 150);
   fill(outside);
   rect(0, 0, 25, 200);
   fill(middle);
@@ -200,7 +200,7 @@ function setup () {
   pop();
 
   push();
-  translate(1200, 80);
+  translate(1100, 80);
   fill(inside);
   rect(0, 0, 200, 200);
   fill(outside);
@@ -210,7 +210,7 @@ function setup () {
   pop();
 
   push();
-  translate(360, 800);
+  translate(360, 500);
   fill(middle);
   triangle(30, 75, 58, 200, 86, 75);
   pop();
@@ -224,7 +224,7 @@ function renderText() {
   // cnv.textSize(700);
   background(51, 0, 0);
   textSize(35);
-  text(displayText, 400, 500);
+  text(displayText, 400, 400);
   fill(c);
   textStyle(BOLDITALIC);
 
@@ -232,7 +232,7 @@ function renderText() {
   let middle = color(204, 153, 0);
   let outside = color(153, 51, 0);
   push();
-  translate(1160, 800);
+  translate(833, 520);
   fill(inside);
   rect(0, 0, 200, 20);
   fill(outside);
@@ -270,8 +270,9 @@ function draw() {
   textStyle(BOLDITALIC);
   textSize(50);
   text(displayText2, 380, 200);
+  textStyle(BOLD);
   textSize(30);
-  text(displayText3, 400, 300);
+  text(displayText3, 650, 250);
   fill(c);
 
   //
