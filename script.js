@@ -271,7 +271,7 @@ function draw() {
   textSize(50);
   text(displayText2, 380, 200);
   textSize(30);
-  text(displayText3, 400, 350);
+  text(displayText3, 400, 300);
   fill(c);
 
   //
