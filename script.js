@@ -233,7 +233,7 @@ function setup () {
 
 function renderText() {
   // let cnv = createCanvas(windowWidth, windowHeight);
-  let c = color(102, 51, 0);
+  let c = color(102, 35, 0);
   // let blueValue = blue(c);
   // background(0, 1, blueValue);
   // cnv.textSize(700);
@@ -242,6 +242,9 @@ function renderText() {
   text(displayText, 400, 400);
   fill(c);
   textStyle(BOLDITALIC);
+  textSize(30);
+  text(displayText4, 500, 550);
+  fill(c);
 
   let inside = color(204, 102, 0);
   let middle = color(204, 153, 0);
