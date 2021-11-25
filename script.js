@@ -3,6 +3,7 @@
 //     eSound,
 //     iSound,
 var randNum,
+ranShape,
 aSoundRand,
 eSoundRand,
 iSoundRand,
@@ -108,7 +109,9 @@ window.addEventListener('keydown', (e) => {
 var displayText = 'Type anything, then press enter/return.';
 var displayText2 = 'Dynamic Possibilities';
 var displayText3 = 'by Mae Udarbe';
-
+var displayText4 = 'Press 0 to STOP'
+var x, y, w, h;
+var totalShapeCount = 93
 
 
 // function setup() {
@@ -214,6 +217,18 @@ function setup () {
   fill(middle);
   triangle(30, 75, 58, 200, 86, 75);
   pop();
+
+  var i = 0
+
+  stroke(255, 50);
+  for(i = 0; i < totalShapeCount; i++) {
+    drawRandomShape("rectangle");
+  }
+
+  stroke(0, 50);
+  for(i = 0; i < totalShapeCount; i++) {
+    drawRandomShape("ellipse");
+  }
 }
 
 function renderText() {
@@ -269,16 +284,35 @@ function draw() {
   // background(51, 0, 0);
   textStyle(BOLDITALIC);
   textSize(50);
-  text(displayText2, 380, 200);
+  text(displayText2, 280, 200);
   textStyle(BOLD);
   textSize(30);
-  text(displayText3, 650, 250);
+  text(displayText3, 750, 300);
   fill(c);
+}
+
+  function drawRandomShape(choice) {
+    x = random(width);
+    y = random(height);
+    w = random(5, 100);
+    h = random(5, 100);
+
+    if (choice == "ellipse") {
+      noStroke();
+      fill(random(25), random(5), random(22), 20);
+      ellipse(x, y, w, h);
+    }
+    else {
+      noStroke();
+      fill(random(235), random(25), random(255), 70);
+      rect(x, y, w , h);
+    }
+  }
 
   //
   // text(displayText3, 800, 500);
   // textStyle(ITALIC);
-}
+
 
 
 function preload() {
