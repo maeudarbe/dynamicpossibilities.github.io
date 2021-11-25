@@ -181,7 +181,9 @@ function setup () {
   fill(153, 51, 0);
   textStyle(BOLD);
   renderText();
+}
 
+function newShapes() {
   let inside = color(204, 102, 0);
   let middle = color(204, 153, 0);
   let outside = color(153, 51, 0);
@@ -299,6 +301,8 @@ function renderText() {
   fill(middle);
   quad(290, 20, 18, 20, 69, 63, 30, 26);
   pop();
+
+  newShapes();
 }
 
 function draw() {
