@@ -111,7 +111,7 @@ var displayText2 = 'Dynamic Possibilities';
 var displayText3 = 'by Mae Udarbe';
 var displayText4 = 'Press 0 to STOP'
 var x, y, w, h;
-var totalShapeCount = 83
+var totalShapeCount = 73
 
 
 // function setup() {
