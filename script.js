@@ -254,10 +254,20 @@ function renderText() {
   translate(833, 520);
   fill(inside);
   rect(0, 0, 200, 20);
-  fill(outside);
+  fill(255, 153, 0);
   quad(200, 250, 8, 20, 69, 63, 30, 76);
-  fill(middle);
+  fill(255, 204, 255);
   rect(60, 90, 8, 80);
+  pop();
+
+  push();
+  translate(1100, 80);
+  fill(204, 0, 102);
+  rect(0, 0, 200, 200);
+  fill(255, 204, 255);
+  quad(200, 250, 86, 20, 69, 63, 30, 76);
+  fill(255, 153, 204);
+  rect(60, 90, 80, 80);
   pop();
 
   push();
@@ -267,8 +277,14 @@ function renderText() {
   pop();
 
   push();
+  translate(100, 500);
+  fill(204, 0, 102);
+  quad(20, 550, 18, 20, 9, 63, 30, 26);
+  pop();
+
+  push();
   translate(360, 800);
-  fill(middle);
+  fill(255, 204, 0);
   triangle(30, 75, 58, 20, 86, 75);
   pop();
 
@@ -279,7 +295,7 @@ function renderText() {
   pop();
 
   push();
-  translate(820, 700);
+  translate(1120, 700);
   fill(middle);
   quad(290, 20, 18, 20, 69, 63, 30, 26);
   pop();
