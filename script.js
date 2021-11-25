@@ -111,7 +111,7 @@ var displayText2 = 'Dynamic Possibilities';
 var displayText3 = 'by Mae Udarbe';
 var displayText4 = 'Press 0 to STOP'
 var x, y, w, h;
-var totalShapeCount = 73
+var totalShapeCount = 63
 
 
 // function setup() {
@@ -175,15 +175,16 @@ var totalShapeCount = 73
 
 
 function setup () {
-  let cnv = createCanvas(1366, 784);
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  let cnv = createCanvas(w, h-50);
+  // let cnv = createCanvas(1366, 784);
   noStroke();
   frameRate(25);
   fill(153, 51, 0);
   textStyle(BOLD);
   renderText();
-}
 
-function newShapes() {
   let inside = color(204, 102, 0);
   let middle = color(204, 153, 0);
   let outside = color(153, 51, 0);
@@ -219,7 +220,9 @@ function newShapes() {
   fill(middle);
   triangle(30, 75, 58, 200, 86, 75);
   pop();
+}
 
+function newShapes() {
   var i = 0
 
   stroke(255, 50);
