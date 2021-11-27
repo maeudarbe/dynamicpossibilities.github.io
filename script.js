@@ -357,10 +357,12 @@ function renderText() {
 
 function draw() {
   // ellipse(mouseX, mouseY, 10, 20);
-  fill(255, 255, 230, 10);
+  fill(255, 255, 230, 15);
   ellipse(dragX, dragY, 33, 33);
+  mouseDragged();
   fill(128, 255, 191, 10);
   ellipse(moveX, moveY, 33, 33);
+  mouseMoved();
 
   let z = mouseX;
   let v = mouseY;
