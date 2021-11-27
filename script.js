@@ -174,10 +174,10 @@ let dragX, dragY, moveX, moveY;
 
 
 function setup () {
-  var w = window.innerWidth;
-  var h = window.innerHeight;
-  let cnv = createCanvas(w, h);
-  // let cnv = createCanvas(1366, 784);
+  // var w = window.innerWidth;
+  // var h = window.innerHeight;
+  // let cnv = createCanvas(w, h);
+  let cnv = createCanvas(1366, 784);
 
   noStroke();
   frameRate(25);
