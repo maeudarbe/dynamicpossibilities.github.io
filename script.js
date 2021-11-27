@@ -111,6 +111,8 @@ var displayText4 = 'Press 0 to STOP'
 var x, y, w, h;
 var totalShapeCount = 63
 
+let dragX, dragY, moveX, moveY;
+
 // function setup() {
 //   let cnv = createCanvas(windowWidth, windowHeight);
 //   let c = color(175, 100, 220);
@@ -247,9 +249,7 @@ function newShapes() {
 
 function renderText() {
   let c = color(102, 51, 0);
-  // let blueValue = blue(c);
-  // background(0, 1, blueValue);
-  // cnv.textSize(700);
+
   background(230, 242, 255);
   textSize(50);
   fill(0, 25, 51);
@@ -357,6 +357,11 @@ function renderText() {
 
 function draw() {
   // ellipse(mouseX, mouseY, 10, 20);
+  fill(255, 255, 230, 10);
+  ellipse(dragX, dragY, 33, 33);
+  fill(128, 255, 191, 10);
+  ellipse(moveX, moveY, 33, 33);
+
   let z = mouseX;
   let v = mouseY;
   let ix = width - mouseX;
@@ -381,7 +386,17 @@ function draw() {
   // }
 }
 
-  function drawRandomShape(choice) {
+function mouseMoved() {
+  moveX = mouseX;
+  moveY = mouseY;
+}
+
+function mouseDragged() {
+  dragX = mouseX;
+  dragY = mouseY;
+}
+
+function drawRandomShape(choice) {
     x = random(width);
     y = random(height);
     w = random(5, 100);
