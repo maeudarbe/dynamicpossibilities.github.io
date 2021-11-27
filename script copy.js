@@ -1,7 +1,5 @@
-// // //new js File
-// var aSound,
-//     eSound,
-//     iSound,
+//Dynamic Possibilities by Mae Udarbe
+
 var randNum,
 aSoundRand,
 eSoundRand,
@@ -98,6 +96,7 @@ const letters = {
   90: 'z'
 };
 
+//this stops the window from automatically scrolling down when the "spacebar" is pressed.
 window.addEventListener('keydown', (e) => {
     if (e.keyCode === 32 && e.target === document.body) {
       e.preventDefault();
@@ -111,71 +110,12 @@ var displayText4 = 'Press 0 to STOP'
 var x, y, w, h;
 var totalShapeCount = 63
 
-// function setup() {
-//   let cnv = createCanvas(windowWidth, windowHeight);
-//   let c = color(175, 100, 220);
-//   let blueValue = blue(c);
-//   background(0, 1, blueValue);
-//   cnv.textSize(70);
-//   cnv.text("Press any key to play sound. Press 0 to stop.", 200, 400);
-//   let allArrays = [];
-//   for (p = 0; p <= 25; p++) {
-//     let alphabet = "abcdefghigklmnopqrstuvwxyz";
-//     allArrays[p] = String(alphabet[p]) + "KeyArraySound[]";
-//     console.log(allArrays);
-//     // same for reRandKeys
-//   }
-// }
 
-// function setup() {
-//   createCanvas(100, 100, WEBGL);
-//   textFont(inconsolata);
-//   textSize(width / 3);
-//   textAlign(CENTER, CENTER);
-// }
-
-// function setup() {
-//   createCanvas(710, 400);
-//   noStroke();
-//   background(51, 0, 0);
-//
-//   let inside = color(204, 102, 0);
-//   let middle = color(204, 153, 0);
-//   let outside = color(153, 51, 0);
-//
-//   // These statements are equivalent to the statements above.
-//   // Programmers may use the format they prefer.
-//   //let inside = color('#CC6600');
-//   //let middle = color('#CC9900');
-//   //let outside = color('#993300');
-//
-//   push();
-//   translate(80, 80);
-//   fill(outside);
-//   rect(0, 0, 200, 200);
-//   fill(middle);
-//   rect(40, 60, 120, 120);
-//   fill(inside);
-//   rect(60, 90, 80, 80);
-//   pop();
-//
-//   push();
-//   translate(360, 80);
-//   fill(inside);
-//   rect(0, 0, 200, 200);
-//   fill(outside);
-//   rect(40, 60, 120, 120);
-//   fill(middle);
-//   rect(60, 90, 80, 80);
-//   pop();
-// }
-
-
+//this is the setup of the window (window width and height, text fonts, size & style, and shapes)
 function setup () {
   var w = window.innerWidth;
   var h = window.innerHeight;
   let cnv = createCanvas(w, h-20);
-  // let cnv = createCanvas(1366, 784);
 
   noStroke();
   frameRate(25);
@@ -183,9 +123,9 @@ function setup () {
   textStyle(BOLD);
   renderText();
 
-  let inside = color(255, 128, 255);
-  let middle = color(153, 0, 153);
-  let outside = color(223, 128, 255);
+  let inside = color(204, 102, 0);
+  let middle = color(204, 153, 0);
+  let outside = color(153, 51, 0);
 
   push();
   translate(50, 150);
@@ -220,6 +160,7 @@ function setup () {
   pop();
 }
 
+//this creates the random shapes displayed in the window
 function newShapes() {
   var i = 0
 
@@ -232,54 +173,40 @@ function newShapes() {
   for(i = 0; i < totalShapeCount; i++) {
     drawRandomShape("ellipse");
   }
-
-//this creates circles where the mouse is
-  let z = mouseX;
-  let v = mouseY;
-  let ix = width - mouseX;
-  let iy = height - mouseY;
-  fill(245, 230, 255, 30);
-  ellipse(z, height/2, v, v);
-  fill(51, 51, 204, 30);
-  ellipse(ix, height/2, iy, iy);
-
 }
 
 function renderText() {
   let c = color(102, 51, 0);
-  // let blueValue = blue(c);
-  // background(0, 1, blueValue);
-  // cnv.textSize(700);
-  background(230, 242, 255);
-  textSize(50);
-  fill(0, 25, 51);
-  text(displayText, 400, 500);
+  background(51, 0, 0);
+  textSize(40);
+  text(displayText, 400, 400);
+  fill(c);
   textStyle(BOLDITALIC);
   textSize(35);
-  fill(102, 51, 0);
-  text(displayText4, 500, 750);
+  fill(143, 51, 0);
+  text(displayText4, 500, 550);
 
-  let inside = color(255, 204, 255);
-  let middle = color(255, 153, 187);
-  let outside = color(230, 2155, 255);
+  let inside = color(204, 102, 0);
+  let middle = color(204, 153, 0);
+  let outside = color(153, 51, 0);
 
   push();
   translate(833, 520);
   fill(inside);
   rect(0, 0, 200, 20);
-  fill(middle);
+  fill(255, 153, 0);
   quad(200, 250, 8, 20, 69, 63, 30, 76);
-  fill(outside);
+  fill(255, 204, 255);
   rect(60, 90, 8, 80);
   pop();
 
   push();
   translate(1100, 80);
-  fill(inside);
+  fill(204, 0, 102);
   rect(0, 0, 200, 200);
-  fill(middle);
+  fill(255, 204, 255);
   quad(200, 250, 86, 20, 69, 63, 30, 76);
-  fill(outside);
+  fill(255, 153, 204);
   rect(60, 90, 80, 80);
   pop();
 
@@ -291,13 +218,13 @@ function renderText() {
 
   push();
   translate(100, 500);
-  fill(middle);
+  fill(204, 0, 102);
   quad(20, 550, 18, 20, 9, 63, 30, 26);
   pop();
 
   push();
   translate(360, 800);
-  fill(outside);
+  fill(255, 204, 0);
   triangle(30, 75, 58, 20, 86, 75);
   pop();
 
@@ -316,56 +243,9 @@ function renderText() {
   newShapes();
 }
 
-// function particles(x, y) {
-//   this.x = mouseX;
-//   this.y = mouseY;
-//
-//   this.history = [];
-//
-//   this.update = function() {
-//     this.x += random(-15, 15);
-//     this.y += random(-15, 15);
-//
-//     var v = createVector(this.x, this.y);
-//     this.history.push(v);
-//
-//     if(this.history.length > 25) {
-//       this.history.splice(0,1);
-//     }
-//   }
-//
-//   this.history.push(this.x, this.y);
-//   println(this.history);
-// }
-//
-//   this.show = function() {
-//     stroke(0);
-//     fill(0, 150);
-//     ellipse(this.x, this.y, 24, 24);
-//
-//     for(var i = 0; i < this.history.length; i++) {
-//       var pos = this.history[i];
-//       fill(random(255));
-//       ellipse(pos.x, pose.y, i, i);
-//     }
-//   }
-
-
-// function mouseMoved() {
-//   particles.push(new particles(mouseX, mouseY));
-// }
 
 function draw() {
-  // ellipse(mouseX, mouseY, 10, 20);
-  let z = mouseX;
-  let v = mouseY;
-  let ix = width - mouseX;
-  let iy = height - mouseY;
-  fill(51, 51, 204, 0.9);
-  ellipse(z, height/2, v, v);
-  fill(51, 51, 204, 0.75);
-  ellipse(ix, height/2, iy, iy);
-
+  ellipse(mouseX, mouseY, 10, 20);
   let c = color(102, 51, 0);
   fill(c);
   textStyle(BOLDITALIC);
@@ -375,10 +255,6 @@ function draw() {
   textStyle(BOLD);
   textSize(30);
   text(displayText3, 750, 300);
-  // for(var i = 0; i < particles.length; i++) {
-  //   particles[i].update();
-  //   particles[i].show();
-  // }
 }
 
   function drawRandomShape(choice) {
@@ -399,24 +275,9 @@ function draw() {
     }
   }
 
-  //
-  // text(displayText3, 800, 500);
-  // textStyle(ITALIC);
-
-
-
+//this function preloads the audio
 function preload() {
   soundFormats('ogg');
-  // for(i = 0; i <= 25; i++) {
-  //   let alphabet = "abcdefghijklmnopqrstuvwxyz";
-  //   allArrays[i] = String(alphabet[i]) + "KeyArraySound[]"
-  // }
-  // for(x = 0; x <= 25; x++) {
-  //   let alphabet = "abcdefghijklmnopqrstuvwxyz";
-  //   for(p = 0; p <= 2; p++) {
-  //     allArrays[x][p] = loadSound('assests/audio/' + String(alphabet[x]) + '/' + String(p) + '.ogg');
-  //   }
-  // }
 
   for(p = 0; p <= 2; p++) {
     aKeyArraySound[p] = loadSound('assets/audio/a/' + String(p) + '.ogg');
@@ -474,32 +335,6 @@ function preload() {
     allArrays.push;
     // console.log(allArrays);
   }
-  // console.log(aKeyArraySound);
-  // console.log(eKeyArraySound);
-  // console.log(iKeyArraySound);
-  // console.log(oKeyArraySound);
-  // console.log(uKeyArraySound);
-  // console.log(bKeyArraySound);
-  // console.log(dKeyArraySound);
-  // console.log(gKeyArraySound);
-  // console.log(jKeyArraySound);
-  // console.log(lKeyArraySound);
-  // console.log(nKeyArraySound);
-  // console.log(qKeyArraySound);
-  // console.log(sKeyArraySound);
-  // console.log(vKeyArraySound);
-  // console.log(xKeyArraySound);
-  // console.log(zKeyArraySound);
-  // console.log(cKeyArraySound);
-  // console.log(fKeyArraySound);
-  // console.log(hKeyArraySound);
-  // console.log(kKeyArraySound);
-  // console.log(mKeyArraySound);
-  // console.log(pKeyArraySound);
-  // console.log(rKeyArraySound);
-  // console.log(tKeyArraySound);
-  // console.log(wKeyArraySound);
-  // console.log(yKeyArraySound);
 }
 
 
@@ -669,22 +504,8 @@ function keyPressed() {
                 superArray[i] = " ";
             }
         }
-        // var idx = superArray.indexOf('spacebar');
-        // if (idx !== -1) {
-        //     superArray[idx] = " ";
-        // }
-        // superArray.split(superArray.length);
         displayText = superArray.join('');
         renderText();
-        // for(idx = 0; idx <= superArray.length; idx++) {
-        //   console.log(superArray[idx]);
-        //   for(idx2 = 0; idx2 <= allArrays.length; idx2++) {
-        //     console.log(allArrays[idx2]);
-        //     if (superArray[idx] == allArrays[idx2].charAt(0)) {
-        //       allArrays[idx2].play();
-        //     }
-        //   }
-        // }
         superArray = [];
     }
 }
