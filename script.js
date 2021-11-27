@@ -109,7 +109,7 @@ var displayText2 = 'Dynamic Possibilities';
 var displayText3 = 'by Mae Udarbe';
 var displayText4 = 'Press 0 to STOP'
 var x, y, w, h;
-var totalShapeCount = 63
+var totalShapeCount = 61
 
 let dragX, dragY, moveX, moveY;
 
@@ -174,10 +174,10 @@ let dragX, dragY, moveX, moveY;
 
 
 function setup () {
-  // var w = window.innerWidth;
-  // var h = window.innerHeight;
-  // let cnv = createCanvas(w, h);
-  let cnv = createCanvas(1366, 784);
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  let cnv = createCanvas(w, h-10);
+  // let cnv = createCanvas(1366, 784);
 
   noStroke();
   frameRate(25);
@@ -253,11 +253,11 @@ function renderText() {
   background(230, 242, 255);
   textSize(50);
   fill(0, 25, 51);
-  text(displayText, 400, 500);
+  text(displayText, 220, 480);
   textStyle(BOLDITALIC);
-  textSize(35);
+  textSize(38);
   fill(102, 51, 0);
-  text(displayText4, 500, 750);
+  text(displayText4, 480, 700);
 
   let inside = color(255, 204, 255);
   let middle = color(255, 153, 187);
@@ -406,7 +406,7 @@ function drawRandomShape(choice) {
 
     if (choice == "ellipse") {
       noStroke();
-      fill(random(25), random(5), random(22), 20);
+      fill(random(255), random(5), random(22), 20);
       ellipse(x, y, w, h);
     }
     else {
