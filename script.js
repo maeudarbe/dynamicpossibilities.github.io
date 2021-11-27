@@ -174,7 +174,7 @@ var totalShapeCount = 63
 function setup () {
   var w = window.innerWidth;
   var h = window.innerHeight;
-  let cnv = createCanvas(w, h-10);
+  let cnv = createCanvas(w, h);
   // let cnv = createCanvas(1366, 784);
 
   noStroke();
