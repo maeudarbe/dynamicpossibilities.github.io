@@ -96,7 +96,7 @@ const letters = {
   90: 'z'
 };
 
-//this stops the window from automatically scrolling down when the "spacebar" is pressed.
+//this command stops the window from automatically scrolling down when the "spacebar" is pressed.
 window.addEventListener('keydown', (e) => {
     if (e.keyCode === 32 && e.target === document.body) {
       e.preventDefault();
@@ -158,7 +158,7 @@ function setup () {
   pop();
 }
 
-//this creates the random shapes displayed in the window
+//this function creates the random shapes displayed in the window.
 function newShapes() {
   var i = 0
 
@@ -184,6 +184,7 @@ function newShapes() {
 
 }
 
+//this is the text displayed after pressing enter.
 function renderText() {
   let c = color(102, 51, 0);
 
@@ -254,6 +255,7 @@ function renderText() {
 }
 
 function draw() {
+  //this command controls the ellipses when the mouse is moved.
   fill(255, 255, 230, 15);
   ellipse(dragX, dragY, 33, 33);
   mouseDragged();
@@ -291,6 +293,7 @@ function mouseDragged() {
   dragY = mouseY;
 }
 
+//this function controls the random shapes that appear on screen every time you press enter.
 function drawRandomShape(choice) {
     x = random(width);
     y = random(height);
@@ -309,10 +312,11 @@ function drawRandomShape(choice) {
     }
   }
 
-//this function preloads the audio
+//this function preloads the audio.
 function preload() {
   soundFormats('ogg');
 
+  //this calls the audio from the audio folder.
   for(p = 0; p <= 2; p++) {
     aKeyArraySound[p] = loadSound('assets/audio/a/' + String(p) + '.ogg');
     eKeyArraySound[p] = loadSound('assets/audio/e/' + String(p) + '.ogg');
@@ -340,6 +344,7 @@ function preload() {
     tKeyArraySound[p] = loadSound('assets/audio/t/' + String(p) + '.ogg');
     wKeyArraySound[p] = loadSound('assets/audio/w/' + String(p) + '.ogg');
     yKeyArraySound[p] = loadSound('assets/audio/y/' + String(p) + '.ogg');
+    //this calls the random function.
     reRandAKey();
     reRandEKey();
     reRandIKey();
@@ -370,7 +375,7 @@ function preload() {
   }
 }
 
-
+//this function randomises the variations on each key.
 function reRandAKey() {
   aSoundRand = Math.floor(Math.random() * aKeyArraySound.length);
   aKeyArraySound[aSoundRand].playMode('restart');
@@ -527,6 +532,7 @@ function reRandYKey() {
   yKeyArraySound[ySoundRand].setLoop(true);
 }
 
+//This displays the text on screen after pressing enter.
 function keyPressed() {
     if (keyCode != ENTER) {
         superArray.push(letters[keyCode]);
@@ -543,6 +549,7 @@ function keyPressed() {
     }
 }
 
+//this function maps the audio to each alphabet key.
 function keyTyped() {
   if (key === 'a') {
     reRandAKey();
@@ -752,6 +759,7 @@ function keyTyped() {
     } else {
       console.log("File not yet loaded");
     }
+  //this tells the music to stop when "0" is pressed.
   } else if (key === '0') {
     for (p = 0; p < aKeyArraySound.length; p++) {
       aKeyArraySound[p].stop();
@@ -783,3 +791,4 @@ function keyTyped() {
     }
   }
 }
+//special thanks to Vincent Giles. 
